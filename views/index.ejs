@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>toDoList</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet"> 
+  <script src="https://unpkg.com/phosphor-icons"></script> 
+</head>
+<body>
+
+  <h1> Things that need to get done . . . . . . </h1>
+
+  <section class='interact'>
+    <form class="hittingEnter">
+      <input id="items" type="text" placeholder="to do's">
+      <button id="add" type="submit">Add Item</button>
+    </form>
+    
+    
+  </section>
+
+
+  <ul id="list">
+    <% for(var i=0; i< tasksLeft.length; i++) {%>
+      <li>  
+      <% if (tasksLeft[i].completed) { %>
+        <span data-id='<%=tasksLeft[i]._id %>' class="strike task"><%= tasksLeft[i].tasksLeft %></span> 
+        <%} else { %>
+          <span data-id='<%=tasksLeft[i]._id %>' class="task"><%= tasksLeft[i].tasksLeft %></span> 
+        <% } %>
+ 
+    </li>
+    <% } %>
+  </ul>
+
+
+  <form>
+    <button id="itemRemove">Remove</button>
+    <button id="clearAll">Clear All</button>
+    <p class="totalCount"><%= ttlLeftToDo %></p>
+  </form>
+
+  <script src="main.js"></script>
+
+</body>
+</html>
+
